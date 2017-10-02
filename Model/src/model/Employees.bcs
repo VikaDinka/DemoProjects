@@ -1,0 +1,12 @@
+//Groovy Scripts for model.Employees
+
+package model
+
+import oracle.jbo.script.annotation.MessageParameterExpression;
+
+@MessageParameterExpression(validatorName="SalaryRule0", name="ResExpressions_0", attributeName="Salary")
+def Salary_SalaryRule0_ResExpressions_0_MessageParameterValues()
+{
+//adf.newValue
+}
+

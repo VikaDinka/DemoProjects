@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <af:group id="g1">
+    <af:button text="First Demo" id="b1" action="#{pageFlowScope.Buttons.first_demo}"/>
+    <af:button text="BC Page" id="b2" action="#{pageFlowScope.Buttons.bc_page}"/>
+    <af:button text="Business Components" id="b3" action="#{pageFlowScope.Buttons.business_components}"/>
+    <af:button text="Task Flow" id="b4" action="#{pageFlowScope.Buttons.task_flow}"/>
+    <af:button text="JavaScript" id="b5" action="#{pageFlowScope.Buttons.java_script}"/>
+  </af:group>
+  <!--oracle-jdev-comment:preferred-managed-bean-name:Buttons-->
+</jsp:root>

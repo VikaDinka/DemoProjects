@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="main-task-flow">
+    <default-activity>menuPage</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <input-parameter-definition id="__15">
+      <name>inOperationType</name>
+      <value>#{pageFlowScope.inOperationType}</value>
+      <class>java.lang.String</class>
+    </input-parameter-definition>
+    <managed-bean id="__1">
+      <managed-bean-name>Buttons</managed-bean-name>
+      <managed-bean-class>view.Buttons</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
+    <view id="menuPage">
+      <page>/menuPage.jsff</page>
+    </view>
+    <router id="buttonPressed">
+      <case id="__10">
+        <expression>#{pageFlowScope.inOperationType=='first-demo'}</expression>
+        <outcome>first-demo</outcome>
+      </case>
+      <case id="__11">
+        <expression>#{pageFlowScope.inOperationType=='bc-page'}</expression>
+        <outcome>bc-page</outcome>
+      </case>
+      <case id="__12">
+        <expression>#{pageFlowScope.inOperationType=='business-components'}</expression>
+        <outcome>business-components</outcome>
+      </case>
+      <case id="__13">
+        <expression>#{pageFlowScope.inOperationType=='task-flow'}</expression>
+        <outcome>task-flow</outcome>
+      </case>
+      <case id="__14">
+        <expression>#{pageFlowScope.inOperationType=='java-script'}</expression>
+        <outcome>java-script</outcome>
+      </case>
+      <default-outcome>first-demo</default-outcome>
+    </router>
+    <task-flow-call id="first-demo-tf">
+      <task-flow-reference>
+        <document>/WEB-INF/first-demo-tf.xml</document>
+        <id>first-demo-tf</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <task-flow-call id="bc-page-tf">
+      <task-flow-reference>
+        <document>/WEB-INF/bc-page-tf.xml</document>
+        <id>bc-page-tf</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <task-flow-call id="business-components-tf">
+      <task-flow-reference>
+        <document>/WEB-INF/business-components-tf.xml</document>
+        <id>business-components-tf</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <task-flow-call id="task-flow-tf">
+      <task-flow-reference>
+        <document>/WEB-INF/task-flow-tf.xml</document>
+        <id>task-flow-tf</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <task-flow-call id="java-script-tf"></task-flow-call>
+    <control-flow-rule id="__2">
+      <from-activity-id>menuPage</from-activity-id>
+      <control-flow-case id="__3">
+        <from-outcome>press</from-outcome>
+        <to-activity-id>buttonPressed</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__4">
+      <from-activity-id>buttonPressed</from-activity-id>
+      <control-flow-case id="__5">
+        <from-outcome>first-demo</from-outcome>
+        <to-activity-id>first-demo-tf</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__6">
+        <from-outcome>bc-page</from-outcome>
+        <to-activity-id>bc-page-tf</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__7">
+        <from-outcome>business-components</from-outcome>
+        <to-activity-id>business-components-tf</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__8">
+        <from-outcome>task-flow</from-outcome>
+        <to-activity-id>task-flow-tf</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__9">
+        <from-outcome>java-script</from-outcome>
+        <to-activity-id>java-script-tf</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

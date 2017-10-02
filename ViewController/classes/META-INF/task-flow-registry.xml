@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<task-flow-registry xmlns="http://xmlns.oracle.com/adf/controller/rc">
+   <task-flow-descriptor path="WEB-INF/bc-page-tf.xml" id="bc-page-tf" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="jsp"/>
+   <task-flow-descriptor path="WEB-INF/business-components-tf.xml" id="business-components-tf" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="jsp"/>
+   <task-flow-descriptor path="WEB-INF/first-demo-tf.xml" id="first-demo-tf" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="jsp"/>
+   <task-flow-descriptor path="WEB-INF/main-task-flow.xml" id="main-task-flow" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="jsp">
+      <input-parameter name="inOperationType"/>
+   </task-flow-descriptor>
+   <task-flow-descriptor path="WEB-INF/security-flow-definition.xml" id="security-flow-definition" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="jsp">
+      <input-parameter name="username"/>
+   </task-flow-descriptor>
+   <task-flow-descriptor path="WEB-INF/task-flow-demo.xml" id="task-flow-demo" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="true" critical="false" page-type="jsp"/>
+   <task-flow-descriptor path="WEB-INF/task-flow-tf.xml" id="task-flow-tf" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="jsp"/>
+</task-flow-registry>
